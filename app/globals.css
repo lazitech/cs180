@@ -772,8 +772,12 @@ img {
   grid-template-columns: minmax(300px, 0.62fr) minmax(0, 1.58fr);
 }
 
+.deck-portrait__layout {
+  grid-template-columns: minmax(300px, 0.55fr) minmax(0, 1.65fr);
+}
+
 .deck-portrait__frames {
-  align-items: end;
+  align-items: center;
   display: grid;
   gap: clamp(9px, 1.2vw, 18px);
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1187,7 +1191,7 @@ img {
   }
 
   .deck-portrait__frames {
-    align-items: end;
+    align-items: center;
   }
 
   .deck-frame img {
