@@ -43,11 +43,14 @@ or complicate static export; otherwise it will be removed.
 
 ## Build and Deployment Architecture
 
-The existing React/Vinext source remains the source of truth on `main`.
-Vinext will generate a fully static export suitable for GitHub Pages. The build
-will use `/cs180` as its production base path so that HTML, JavaScript, CSS,
-links, the favicon, and all media resolve correctly from a project site rather
-than from the `github.io` domain root.
+The existing React/Next-compatible source remains the source of truth on
+`main`. Vinext remains the local preview and Sites build tool, while the
+official Next.js static exporter will generate the GitHub Pages artifact. This
+avoids a Vinext beta limitation in which static export and `basePath` do not
+currently prerender the application routes together. The Pages build will use
+`/cs180` as its production base path so that HTML, JavaScript, CSS, links, the
+favicon, and all media resolve correctly from a project site rather than from
+the `github.io` domain root.
 
 A GitHub Actions workflow will:
 
@@ -119,8 +122,9 @@ After pushing:
 
 ## Chosen Approach and Alternatives
 
-The selected approach is GitHub Actions plus a static Vinext export. It keeps
-the current interactive implementation maintainable and avoids committing
+The selected approach is GitHub Actions plus an official Next.js static
+export. It keeps the current interactive implementation maintainable, leaves
+Vinext available for the existing development workflow, and avoids committing
 generated files.
 
 Rejected alternatives:

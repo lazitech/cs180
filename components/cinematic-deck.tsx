@@ -5,6 +5,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { FrameSequencePlayer } from '@/components/frame-sequence-player';
 import { projectCopy } from '@/components/project-ui';
+import { sitePath } from '@/lib/site-path';
+
+/* oxlint-disable next/no-img-element -- Assignment stills are intentionally shown unoptimized. */
 
 const slideLabels = ['Cover', 'Portrait', 'Architecture', 'Dolly Zoom'];
 
@@ -200,12 +203,11 @@ export function CinematicDeck() {
         <span className="deck-progress__total">04</span>
       </nav>
 
-      <div
+      <section
         aria-label="Four-slide camera project"
         aria-roledescription="presentation"
         className="deck"
         ref={deckRef}
-        role="region"
       >
         <section
           aria-label="Slide 1 of 4: Cover"
@@ -239,7 +241,7 @@ export function CinematicDeck() {
             <figure className="deck-cover__media">
               <div className="deck-cover__stage">
                 <img
-                  src="/media/dolly-frame-01.jpg"
+                  src={sitePath('/media/dolly-frame-01.jpg')}
                   alt="Complete first Pingu dolly zoom frame"
                 />
                 <span>FULL FRAME · 3:4</span>
@@ -278,9 +280,21 @@ export function CinematicDeck() {
 
             <div className="deck-portrait__frames">
               {[
-                ['/media/portrait-close.jpg', 'SHOT 01', 'CLOSE / WIDE'],
-                ['/media/portrait-medium.jpg', 'SHOT 02', 'STEP BACK'],
-                ['/media/portrait-far.jpg', 'SHOT 03', 'FAR / ZOOM'],
+                [
+                  sitePath('/media/portrait-close.jpg'),
+                  'SHOT 01',
+                  'CLOSE / WIDE',
+                ],
+                [
+                  sitePath('/media/portrait-medium.jpg'),
+                  'SHOT 02',
+                  'STEP BACK',
+                ],
+                [
+                  sitePath('/media/portrait-far.jpg'),
+                  'SHOT 03',
+                  'FAR / ZOOM',
+                ],
               ].map(([src, shot, note]) => (
                 <figure className="deck-frame" key={src}>
                   <div className="deck-frame__image">
@@ -321,7 +335,7 @@ export function CinematicDeck() {
             <div className="deck-architecture__frames">
               <figure className="deck-architecture__frame deck-architecture__frame--left">
                 <img
-                  src="/media/architecture-telephoto.jpg"
+                  src={sitePath('/media/architecture-telephoto.jpg')}
                   alt="Telephoto building view from farther away"
                 />
                 <figcaption>
@@ -332,7 +346,7 @@ export function CinematicDeck() {
               </figure>
               <figure className="deck-architecture__frame deck-architecture__frame--right">
                 <img
-                  src="/media/architecture-wide.jpg"
+                  src={sitePath('/media/architecture-wide.jpg')}
                   alt="Wide building view from closer"
                 />
                 <figcaption>
@@ -375,7 +389,7 @@ export function CinematicDeck() {
             </footer>
           </div>
         </section>
-      </div>
+      </section>
     </main>
   );
 }

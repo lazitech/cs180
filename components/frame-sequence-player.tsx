@@ -5,12 +5,18 @@ import { RotateCcw } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
+import { sitePath } from '@/lib/site-path';
+
+/* oxlint-disable next/no-img-element -- Frames must be displayed at their source ratio. */
 
 const frameCount = 12;
 const frameDelayMs = 250;
 const frameSources = Array.from(
   { length: frameCount },
-  (_, index) => `/media/dolly-frame-${String(index + 1).padStart(2, '0')}.jpg`,
+  (_, index) =>
+    sitePath(
+      `/media/dolly-frame-${String(index + 1).padStart(2, '0')}.jpg`,
+    ),
 );
 
 type LoadState = 'loading' | 'ready' | 'error';
@@ -85,7 +91,7 @@ export function FrameSequencePlayer({ isActive }: FrameSequencePlayerProps) {
     });
 
     preloadedImagesRef.current = images.map(({ image }) => image);
-    Promise.allSettled(images.map(({ loaded }) => loaded)).then((results) => {
+    void Promise.allSettled(images.map(({ loaded }) => loaded)).then((results) => {
       if (cancelled) return;
       const allLoaded = results.every(
         (result) => result.status === 'fulfilled',
@@ -101,6 +107,7 @@ export function FrameSequencePlayer({ isActive }: FrameSequencePlayerProps) {
 
   useEffect(() => {
     if (!isActive) {
+      // oxlint-disable-next-line react/react-compiler -- Playback is an external timer synchronized to slide visibility.
       stopPlayback();
       return;
     }
@@ -115,9 +122,9 @@ export function FrameSequencePlayer({ isActive }: FrameSequencePlayerProps) {
 
   useEffect(() => stopPlayback, [stopPlayback]);
 
-  const handleFrameChange = (values: readonly number[]) => {
+  const handleFrameChange = (value: number | readonly number[]) => {
     stopPlayback();
-    const nextFrame = values[0];
+    const nextFrame = typeof value === 'number' ? value : value[0];
     if (nextFrame && loadedFramesRef.current.has(nextFrame)) {
       setCurrentFrame(nextFrame);
     }
