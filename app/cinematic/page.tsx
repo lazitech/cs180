@@ -1,9 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  DesignSwitcher,
-  ProjectFooter,
-  projectCopy,
-} from '@/components/project-ui';
+import { ProjectFooter, projectCopy } from '@/components/project-ui';
 
 export const metadata: Metadata = {
   title: 'Cinematic — Becoming Friends with Your Camera',
@@ -12,8 +8,6 @@ export const metadata: Metadata = {
 export default function CinematicPage() {
   return (
     <main className="cinematic-page">
-      <DesignSwitcher current="cinematic" />
-
       <header className="cinematic-hero">
         <img src="/media/dolly-zoom.gif" alt="Pingu dolly zoom animation" />
         <div className="cinematic-hero__shade" />

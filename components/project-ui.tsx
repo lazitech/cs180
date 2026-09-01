@@ -1,35 +1,3 @@
-import Link from 'next/link';
-
-type DesignName = 'editorial' | 'cinematic' | 'contemporary';
-
-const designs: Array<{ href: string; name: DesignName; label: string }> = [
-  { href: '/editorial', name: 'editorial', label: 'Editorial' },
-  { href: '/cinematic', name: 'cinematic', label: 'Cinematic' },
-  { href: '/contemporary', name: 'contemporary', label: 'Contemporary' },
-];
-
-export function DesignSwitcher({ current }: { current?: DesignName }) {
-  return (
-    <nav className="design-switcher" aria-label="Switch design direction">
-      <Link className="design-switcher__home" href="/">
-        Three directions
-      </Link>
-      <div className="design-switcher__links">
-        {designs.map((design) => (
-          <Link
-            aria-current={current === design.name ? 'page' : undefined}
-            className={current === design.name ? 'is-current' : undefined}
-            href={design.href}
-            key={design.name}
-          >
-            {design.label}
-          </Link>
-        ))}
-      </div>
-    </nav>
-  );
-}
-
 export function ProjectFooter({ label }: { label: string }) {
   return (
     <footer className="project-footer">
