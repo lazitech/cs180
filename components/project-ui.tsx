@@ -1,12 +1,3 @@
-export function ProjectFooter({ label }: { label: string }) {
-  return (
-    <footer className="project-footer">
-      <p>CS 180 · Project 0</p>
-      <p>{label} direction · Anzhe Lyu · 2026</p>
-    </footer>
-  );
-}
-
 export const projectCopy = {
   intro:
     'Three camera experiments exploring how viewpoint and focal length reshape the way depth appears in a photograph.',
