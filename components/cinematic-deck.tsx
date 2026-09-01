@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { FrameSequencePlayer } from '@/components/frame-sequence-player';
 import { projectCopy } from '@/components/project-ui';
 
 const slideLabels = ['Cover', 'Portrait', 'Architecture', 'Dolly Zoom'];
@@ -213,32 +214,45 @@ export function CinematicDeck() {
           data-slide
           id="cover"
         >
-          <img
-            className="deck-cover__background"
-            src="/media/dolly-zoom.gif"
-            alt=""
-          />
-          <div className="deck-cover__shade" />
-          <div className="deck-cover__copy">
-            <p className="deck-kicker motion-item">
-              Camera study in three movements
-            </p>
-            <h1 className="motion-item">
-              Perspective
-              <br />
-              in Motion
-            </h1>
-            <p className="deck-cover__intro motion-item">{projectCopy.intro}</p>
-            <button
-              className="deck-scroll-cue motion-item"
-              onClick={() => goToSlide(1)}
-              type="button"
-            >
-              Scroll to begin <span aria-hidden="true">↓</span>
-            </button>
-          </div>
-          <div className="deck-cover__counter motion-item">
-            00:14 <span>frames</span>
+          <div className="deck-slide__inner deck-cover__layout">
+            <div className="deck-cover__copy">
+              <p className="deck-kicker motion-item">
+                Camera study in three movements
+              </p>
+              <h1 className="motion-item">
+                Perspective
+                <br />
+                in Motion
+              </h1>
+              <p className="deck-cover__intro motion-item">
+                {projectCopy.intro}
+              </p>
+              <button
+                className="deck-scroll-cue motion-item"
+                onClick={() => goToSlide(1)}
+                type="button"
+              >
+                Scroll to begin <span aria-hidden="true">↓</span>
+              </button>
+            </div>
+
+            <figure className="deck-cover__media">
+              <div className="deck-cover__stage">
+                <img
+                  src="/media/dolly-frame-01.jpg"
+                  alt="Complete first Pingu dolly zoom frame"
+                />
+                <span>FULL FRAME · 3:4</span>
+              </div>
+              <figcaption>
+                <span>FRAME 01</span>
+                <span>12 IMAGE SEQUENCE</span>
+              </figcaption>
+            </figure>
+
+            <div className="deck-cover__counter motion-item">
+              00:12 <span>frames</span>
+            </div>
           </div>
         </section>
 
@@ -352,30 +366,7 @@ export function CinematicDeck() {
             </header>
 
             <div className="deck-dolly__media">
-              <div className="deck-dolly__main">
-                <img
-                  src="/media/dolly-zoom.gif"
-                  alt="Looping Pingu dolly zoom"
-                />
-                <div className="deck-rec">
-                  <span /> REC
-                </div>
-                <div className="deck-timecode">00:00:03:14</div>
-              </div>
-              <div
-                className="deck-filmstrip"
-                aria-label="Four representative dolly zoom frames"
-              >
-                {['01', '05', '09', '14'].map((number) => (
-                  <figure key={number}>
-                    <img
-                      src={`/media/dolly-frame-${number}.jpg`}
-                      alt={`Dolly zoom frame ${number}`}
-                    />
-                    <figcaption>{number}</figcaption>
-                  </figure>
-                ))}
-              </div>
+              <FrameSequencePlayer isActive={activeIndex === 3} />
             </div>
 
             <footer className="deck-final__footer">

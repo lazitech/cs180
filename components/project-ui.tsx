@@ -6,5 +6,5 @@ export const projectCopy = {
   architecture:
     'From farther away, the building facade and the scene behind it sit at more similar distances relative to the camera, so their apparent sizes converge and the view feels compressed. Moving closer with a wider field of view exaggerates near–far size differences and makes the street feel deeper.',
   dolly:
-    'For fourteen frames, I moved the camera backward while zooming in and then aligned Pingu to the first frame. The subject stays nearly fixed while the window, wall, and chair change scale around it. The resulting shift comes from changing the camera position; zoom compensates only for the subject framing.',
+    'For twelve frames, I moved the camera backward while zooming in and then aligned Pingu to the first frame. The subject stays nearly fixed while the window, wall, and chair change scale around it. The resulting shift comes from changing the camera position; zoom compensates only for the subject framing.',
 };
