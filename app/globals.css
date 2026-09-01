@@ -825,6 +825,21 @@ img {
   width: 100%;
 }
 
+/* Keep the three portrait studies on one shared baseline. The first frame's
+   1800 × 2339 image ratio defines the window; the taller follow-up frames
+   are cropped from the top so their lower edge stays aligned with frame 01. */
+.deck-portrait__frames .deck-frame__image {
+  aspect-ratio: 1800 / 2339;
+  overflow: hidden;
+}
+
+.deck-portrait__frames .deck-frame__image img {
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
 .deck-frame figcaption {
   display: flex;
   font:
