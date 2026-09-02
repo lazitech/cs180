@@ -228,7 +228,7 @@ export function CinematicDeck() {
                 <br />
                 with Your
                 <br />
-                Camera
+                <span className="deck-cover__accent">Camera</span>
               </h1>
               <button
                 className="deck-scroll-cue motion-item"
