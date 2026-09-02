@@ -625,14 +625,12 @@ img {
 
 .deck-cover h1 {
   font:
-    750 clamp(42px, 5.6vw, 88px) / 0.94 'Inter Display',
-    Inter,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  letter-spacing: -0.055em;
+    600 clamp(44px, 5.8vw, 92px) / 0.94 'Noto Serif Display',
+    'Noto Serif',
+    Georgia,
+    serif;
+  letter-spacing: -0.035em;
   margin: 25px 0 30px;
-  text-transform: uppercase;
 }
 
 .deck-cover__accent {
