@@ -1,6 +1,4 @@
 export const projectCopy = {
-  intro:
-    'Three camera experiments exploring how viewpoint and focal length reshape the way depth appears in a photograph.',
   portrait:
     'At close range, the small depth differences across a face are large relative to the camera distance. Features closest to the lens—especially the nose and center of the face—appear disproportionately large. Stepping back reduces that perspective distortion; zooming in restores a similar framing without bringing the distortion back.',
   architecture:

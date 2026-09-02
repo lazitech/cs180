@@ -219,16 +219,17 @@ export function CinematicDeck() {
           <div className="deck-slide__inner deck-cover__layout">
             <div className="deck-cover__copy">
               <p className="deck-kicker motion-item">
-                Project 0: Becoming Friends with Your Camera
+                Project 0 / Camera Study
               </p>
               <h1 className="motion-item">
-                Perspective
+                Becoming
                 <br />
-                in Motion
+                Friends
+                <br />
+                with Your
+                <br />
+                Camera
               </h1>
-              <p className="deck-cover__intro motion-item">
-                {projectCopy.intro}
-              </p>
               <button
                 className="deck-scroll-cue motion-item"
                 onClick={() => goToSlide(1)}
@@ -376,7 +377,7 @@ export function CinematicDeck() {
 
             <footer className="deck-final__footer">
               <span>CS 180 · Project 0</span>
-              <span>Perspective in Motion · Anzhe Lyu · 2026</span>
+              <span>Becoming Friends with Your Camera · Anzhe Lyu · 2026</span>
             </footer>
           </div>
         </section>
