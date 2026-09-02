@@ -462,7 +462,7 @@ img {
 .deck-progress__number,
 .deck-progress__total {
   font:
-    700 9px/1 'Courier New',
+    700 11px/1 'Courier New',
     monospace;
   letter-spacing: 0.08em;
 }
@@ -688,7 +688,7 @@ img {
   cursor: pointer;
   display: inline-flex;
   font:
-    700 11px/1 Arial,
+    700 13px/1 Arial,
     sans-serif;
   gap: 18px;
   letter-spacing: 0.16em;
@@ -803,10 +803,10 @@ img {
 .deck-frame__shot {
   color: var(--cine-muted);
   font:
-    700 9px/1 'Courier New',
+    700 clamp(15px, 1.2vw, 18px) / 1 'Courier New',
     monospace;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
 }
 
 .deck-frame__emoji {
@@ -816,14 +816,18 @@ img {
   text-align: center;
 }
 
-.deck-frame figcaption {
+.deck-frame__image figcaption {
+  background: rgba(5, 7, 8, 0.84);
   color: var(--cine-amber);
   font:
-    700 9px/1 'Courier New',
+    700 clamp(14px, 1.05vw, 17px) / 1 'Courier New',
     monospace;
-  letter-spacing: 0.1em;
-  padding-top: 9px;
-  text-align: center;
+  letter-spacing: 0.08em;
+  padding: 8px 10px;
+  position: absolute;
+  right: 9px;
+  text-align: right;
+  top: 9px;
 }
 
 .is-active .deck-frame:nth-child(1) {
@@ -897,7 +901,7 @@ img {
 
 .deck-architecture__frame figcaption span {
   font:
-    700 9px/1 'Courier New',
+    700 11px/1 'Courier New',
     monospace;
   letter-spacing: 0.12em;
 }
@@ -985,7 +989,7 @@ img {
 .deck-frame-player__state,
 .deck-frame-player__count {
   font:
-    700 9px/1 'Courier New',
+    700 11px/1 'Courier New',
     monospace;
   letter-spacing: 0.11em;
   position: absolute;
@@ -1026,7 +1030,7 @@ img {
   bottom: 20px;
   color: var(--cine-amber);
   font:
-    700 9px/1 'Courier New',
+    700 11px/1 'Courier New',
     monospace;
   left: 50%;
   letter-spacing: 0.1em;
@@ -1050,7 +1054,7 @@ img {
   border-radius: 0;
   color: var(--cine-text);
   font:
-    800 9px/1 'Courier New',
+    800 11px/1 'Courier New',
     monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1083,7 +1087,7 @@ img {
 
 .deck-frame-player__label {
   font:
-    700 9px/1 'Courier New',
+    700 11px/1 'Courier New',
     monospace;
   letter-spacing: 0.08em;
   min-width: 64px;
@@ -1101,7 +1105,7 @@ img {
 .deck-frame-player__ticks span {
   color: #6e706d;
   font:
-    700 7px/1 'Courier New',
+    700 10px/1 'Courier New',
     monospace;
   text-align: center;
   transition: color 120ms ease;
@@ -1116,7 +1120,7 @@ img {
   color: #82837f;
   display: flex;
   font:
-    700 8px/1 'Courier New',
+    700 10px/1 'Courier New',
     monospace;
   grid-column: 1 / -1;
   justify-content: space-between;
@@ -1254,7 +1258,7 @@ img {
   }
 
   .deck-frame__shot {
-    font-size: 7px;
+    font-size: 13px;
     letter-spacing: 0.04em;
     margin-bottom: 7px;
   }
@@ -1264,10 +1268,12 @@ img {
     margin-top: 6px;
   }
 
-  .deck-frame figcaption {
-    font-size: 7px;
+  .deck-frame__image figcaption {
+    font-size: 13px;
     letter-spacing: 0.04em;
-    padding-top: 7px;
+    padding: 6px 7px;
+    right: 6px;
+    top: 6px;
   }
 
   .deck-architecture__frame img {
@@ -1284,7 +1290,7 @@ img {
   }
 
   .deck-architecture__frame figcaption span {
-    font-size: 7px;
+    font-size: 10px;
   }
 
   .deck-architecture__frame figcaption em {
@@ -1301,13 +1307,13 @@ img {
   }
 
   .deck-frame-player__replay {
-    font-size: 8px;
+    font-size: 10px;
     padding-left: 9px;
     padding-right: 9px;
   }
 
   .deck-frame-player__label {
-    font-size: 8px;
+    font-size: 10px;
     min-width: 56px;
   }
 
@@ -1316,7 +1322,7 @@ img {
   }
 
   .deck-frame-player__ticks span {
-    font-size: 6px;
+    font-size: 9px;
   }
 
   .deck-final__footer span:last-child {

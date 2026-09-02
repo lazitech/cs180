@@ -295,11 +295,11 @@ export function CinematicDeck() {
                   <div className="deck-frame__shot">{shot}</div>
                   <div className="deck-frame__image">
                     <img src={src} alt={`${note} portrait`} />
+                    <figcaption>{note}</figcaption>
                   </div>
                   <div aria-hidden="true" className="deck-frame__emoji">
                     {emoji}
                   </div>
-                  <figcaption>{note}</figcaption>
                 </figure>
               ))}
             </div>
