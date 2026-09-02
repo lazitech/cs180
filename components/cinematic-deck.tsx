@@ -219,7 +219,7 @@ export function CinematicDeck() {
           <div className="deck-slide__inner deck-cover__layout">
             <div className="deck-cover__copy">
               <p className="deck-kicker motion-item">
-                Camera study in three movements
+                Project 0: Becoming Friends with Your Camera
               </p>
               <h1 className="motion-item">
                 Perspective
