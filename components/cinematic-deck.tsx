@@ -276,19 +276,19 @@ export function CinematicDeck() {
                   sitePath('/media/portrait-close.jpg'),
                   'SHOT 01',
                   'CLOSE / WIDE',
-                  '👀',
+                  '😢',
                 ],
                 [
                   sitePath('/media/portrait-medium.jpg'),
                   'SHOT 02',
                   'STEP BACK',
-                  '🚶',
+                  '🤔',
                 ],
                 [
                   sitePath('/media/portrait-far.jpg'),
                   'SHOT 03',
                   'FAR / ZOOM',
-                  '🔭',
+                  '😄',
                 ],
               ].map(([src, shot, note, emoji]) => (
                 <figure className="deck-frame" key={src}>
