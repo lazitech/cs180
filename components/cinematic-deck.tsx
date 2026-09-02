@@ -244,17 +244,8 @@ export function CinematicDeck() {
                   src={sitePath('/media/dolly-frame-01.jpg')}
                   alt="Complete first Pingu dolly zoom frame"
                 />
-                <span>FULL FRAME · 3:4</span>
               </div>
-              <figcaption>
-                <span>FRAME 01</span>
-                <span>12 IMAGE SEQUENCE</span>
-              </figcaption>
             </figure>
-
-            <div className="deck-cover__counter motion-item">
-              00:12 <span>frames</span>
-            </div>
           </div>
         </section>
 
