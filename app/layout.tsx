@@ -5,7 +5,7 @@ import { sitePath } from '@/lib/site-path';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Project 0 — Becoming Friends with Your Camera',
+  title: 'Project 0',
   description:
     'Anzhe Lyu explores perspective, focal length, and the dolly zoom through three camera experiments for CS 180.',
   icons: {

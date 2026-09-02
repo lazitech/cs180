@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { CinematicDeck } from '@/components/cinematic-deck';
 
 export const metadata: Metadata = {
-  title: 'Cinematic — Becoming Friends with Your Camera',
+  title: 'Project 0',
 };
 
 export default function CinematicPage() {
